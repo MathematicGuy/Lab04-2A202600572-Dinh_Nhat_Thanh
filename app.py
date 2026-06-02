@@ -194,6 +194,27 @@ tab_chat, tab_ih = st.tabs(["✈️ Travel Agent Chat", "🔬 Instruction Hierar
 
 # ----------------- SIDEBAR CONFIGURATION -----------------
 with st.sidebar:
+    st.markdown("## 🔑 API Keys")
+
+    openai_api_key = st.text_input(
+        "OpenAI API Key",
+        value=os.getenv("OPENAI_API_KEY", ""),
+        type="password",
+        help="Your OpenAI API key (https://platform.openai.com/api-keys)"
+    )
+    if openai_api_key:
+        os.environ["OPENAI_API_KEY"] = openai_api_key
+
+    openrouter_api_key = st.text_input(
+        "OpenRouter API Key",
+        value=os.getenv("OPENROUTER_API_KEY", ""),
+        type="password",
+        help="Your OpenRouter API key (https://openrouter.ai/keys)"
+    )
+    if openrouter_api_key:
+        os.environ["OPENROUTER_API_KEY"] = openrouter_api_key
+
+    st.markdown("---")
     st.markdown("## ⚙️ Model Configurations")
 
     # Model Selector
