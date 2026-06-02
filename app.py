@@ -200,22 +200,22 @@ with st.sidebar:
     model_choice = st.selectbox(
         "Select LLM Backend",
         options=[
+            "OpenAI GPT-5.4-Mini",
             "OpenRouter Llama 3.2 3B Instruct",
             "OpenRouter DeepSeek (Flash)",
-            "OpenAI GPT-5.4-Mini",
             "Custom Path/Model"
         ],
         index=0
     )
 
     # Map selection to configuration parameters
-    if model_choice == "OpenRouter Llama 3.2 3B Instruct":
+    if model_choice == "OpenAI GPT-5.4-Mini":
         provider = "openrouter"
         model_name = "meta-llama/llama-3.2-3b-instruct"
     elif model_choice == "OpenRouter DeepSeek (Flash)":
         provider = "openrouter"
         model_name = "deepseek/deepseek-v4-flash"
-    elif model_choice == "OpenAI GPT-5.4-Mini":
+    elif model_choice == "OpenRouter Llama 3.2 3B Instruct":
         provider = "openai"
         model_name = "gpt-5.4-mini"
     else:
@@ -230,7 +230,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown("## ⚖️ LLM Judge Quality grading")
-    enable_judge = st.checkbox("Grade responses via LLM Judge", value=True)
+    enable_judge = st.checkbox("Grade responses via LLM Judge", value=False)
 
     if enable_judge:
         judge_provider = st.selectbox("Judge Provider", options=["openai", "openrouter"], index=0)
