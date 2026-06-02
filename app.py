@@ -210,14 +210,14 @@ with st.sidebar:
 
     # Map selection to configuration parameters
     if model_choice == "OpenAI GPT-5.4-Mini":
-        provider = "openrouter"
-        model_name = "meta-llama/llama-3.2-3b-instruct"
+        provider = "openai"
+        model_name = "gpt-5.4-mini"
     elif model_choice == "OpenRouter DeepSeek (Flash)":
         provider = "openrouter"
         model_name = "deepseek/deepseek-v4-flash"
     elif model_choice == "OpenRouter Llama 3.2 3B Instruct":
-        provider = "openai"
-        model_name = "gpt-5.4-mini"
+        provider = "openrouter"
+        model_name = "meta-llama/llama-3.2-3b-instruct"
     else:
         provider = st.text_input("Provider (openrouter, openai)", value="openrouter")
         model_name = st.text_input("Model Identifier", value="meta-llama/llama-3.2-3b-instruct")
