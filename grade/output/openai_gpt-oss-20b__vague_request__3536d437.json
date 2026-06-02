@@ -1,0 +1,8 @@
+{
+  "query": "Toi muon du lich cuoi tuan nay, tu van giup toi.",
+  "final_answer": "Bạn muốn đi đâu, ngày đi, ngân sách và số đêm?  \n[Keywords: thong tin, budget, so dem]",
+  "provider": "openrouter",
+  "model_name": "openai/gpt-oss-20b",
+  "tool_calls": [],
+  "_cached_at": "2026-06-02T09:51:09.695768+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "query": "Tu TP.HCM toi muon di Da Lat ngay 2026-06-06, budget 4 trieu cho 2 dem, uu tien gan trung tam va an sang.",
+  "final_answer": "**Kế hoạch chuyến đi: TP.HCM → Đà Lạt**  \n- **Bay**: VietJet Air (VJ‑DLI‑0606‑02) 13:15 – 14:10, giá 1 700 000 đ (2 người).  \n- **Khách sạn**: Pine View Lodge, 4 sao, giá 700 000 đ/đêm, có wifi, bữa sáng và nằm gần trung tâm.  \n- **Chi phí 2 đêm**: 1 400 000 đ (khách sạn) + 1 700 000 đ (bay) + 400 000 đ (xe địa phương) = **3 500 000 đ**.  \n- **Số tiền còn lại**: 4 000 000 đ – 3 500 000 đ = **500 000 đ**.\n\nBạn sẽ có đủ ngân sách cho chuyến đi và còn dư 500 000 đ để thưởng thức ẩm thực, mua sắm hoặc tham quan thêm.  \n\n[Keywords: da lat, pine view lodge, tong chi phi, budget]",
+  "provider": "openrouter",
+  "model_name": "openai/gpt-oss-20b",
+  "tool_calls": [
+    {
+      "name": "search_flights",
+      "args": {
+        "origin": "TP.HCM",
+        "destination": "Da Lat",
+        "departure_date": "2026-06-06",
+        "travelers": 2
+      },
+      "output": "[{\"flight_id\": \"VJ-DLI-0606-02\", \"origin\": \"Ho Chi Minh City\", \"destination\": \"Da Lat\", \"departure_date\": \"2026-06-06\", \"airline\": \"VietJet Air\", \"departure_time\": \"13:15\", \"arrival_time\": \"14:10\", \"price_per_person\": 850000, \"total_price\": 1700000, \"stops\": 0, \"tags\": [\"budget\"]}, {\"flight_id\": \"VN-DLI-0606-01\", \"origin\": \"Ho Chi Minh City\", \"destination\": \"Da Lat\", \"departure_date\": \"2026-06-06\", \"airline\": \"Vietnam Airlines\", \"departure_time\": \"06:40\", \"arrival_time\": \"07:35\", \"price_per_person\": 1350000, \"total_price\": 2700000, \"stops\": 0, \"tags\": [\"balanced\"]}]"
+    },
+    {
+      "name": "calculate_budget",
+      "args": {
+        "total_budget": 4000000,
+        "nights": 2,
+        "cheapest_flight_total": 1700000,
+        "destination": "Da Lat",
+        "travelers": 2
+      },
+      "output": "{\"total_budget\": 4000000, \"cheapest_flight_total\": 1700000, \"local_transport_total\": 400000, \"remaining_budget\": 1900000, \"nights\": 2, \"max_price_per_night\": 950000}"
+    },
+    {
+      "name": "search_hotels",
+      "args": {
+        "city": "Da Lat",
+        "max_price_per_night": 950000
+      },
+      "output": "[{\"hotel_id\": \"DLI-H01\", \"city\": \"Da Lat\", \"name\": \"Pine View Lodge\", \"star_rating\": 4.0, \"location_score\": 8.8, \"price_per_night\": 700000, \"amenities\": [\"wifi\", \"breakfast\", \"gan trung tam\"], \"tags\": [\"balanced\", \"pref_match:0\"]}, {\"hotel_id\": \"DLI-H02\", \"city\": \"Da Lat\", \"name\": \"Budget Garden Inn\", \"star_rating\": 3.0, \"location_score\": 7.8, \"price_per_night\": 430000, \"amenities\": [\"wifi\"], \"tags\": [\"budget\", \"pref_match:0\"]}]"
+    }
+  ],
+  "_cached_at": "2026-06-02T09:50:23.083199+00:00"
+}

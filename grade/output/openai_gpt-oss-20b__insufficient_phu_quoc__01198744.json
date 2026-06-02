@@ -1,0 +1,30 @@
+{
+  "query": "Toi muon di Phu Quoc cuoi tuan nay tu TP.HCM, budget 3 trieu cho 2 nguoi 2 dem.",
+  "final_answer": "Xin lỗi, với ngân sách 3 triệu đồng cho 2 người 2 đêm, chi phí chuyến bay và đi lại đã vượt quá hạn mức, nên không thể đặt chỗ ở Phú Quốc trong thời gian này. Bạn có thể cân nhắc tăng ngân sách hoặc chọn ngày đi khác để có thể hoàn thành chuyến đi.  \n\n[Keywords: phu quoc, budget, thieu, dieu chinh]",
+  "provider": "openrouter",
+  "model_name": "openai/gpt-oss-20b",
+  "tool_calls": [
+    {
+      "name": "search_flights",
+      "args": {
+        "origin": "TP.HCM",
+        "destination": "Phu Quoc",
+        "departure_date": "2026-06-06",
+        "travelers": 2
+      },
+      "output": "[{\"flight_id\": \"VJ-PQC-0606-02\", \"origin\": \"Ho Chi Minh City\", \"destination\": \"Phu Quoc\", \"departure_date\": \"2026-06-06\", \"airline\": \"VietJet Air\", \"departure_time\": \"15:10\", \"arrival_time\": \"16:15\", \"price_per_person\": 1350000, \"total_price\": 2700000, \"stops\": 0, \"tags\": [\"budget\", \"island\"]}, {\"flight_id\": \"VN-PQC-0606-01\", \"origin\": \"Ho Chi Minh City\", \"destination\": \"Phu Quoc\", \"departure_date\": \"2026-06-06\", \"airline\": \"Vietnam Airlines\", \"departure_time\": \"08:00\", \"arrival_time\": \"09:05\", \"price_per_person\": 1700000, \"total_price\": 3400000, \"stops\": 0, \"tags\": [\"island\"]}]"
+    },
+    {
+      "name": "calculate_budget",
+      "args": {
+        "total_budget": 3000000,
+        "nights": 2,
+        "cheapest_flight_total": 2700000,
+        "destination": "Phu Quoc",
+        "travelers": 2
+      },
+      "output": "{\"total_budget\": 3000000, \"cheapest_flight_total\": 2700000, \"local_transport_total\": 400000, \"remaining_budget\": -100000, \"nights\": 2, \"max_price_per_night\": -50000}"
+    }
+  ],
+  "_cached_at": "2026-06-02T09:50:59.407095+00:00"
+}
