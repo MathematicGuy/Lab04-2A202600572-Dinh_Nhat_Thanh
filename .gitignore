@@ -7,3 +7,8 @@ __pycache__/
 
 # Keep the student lab package lean
 solutions/
+.model
+
+# Scoring cache and results (auto-generated, not for commit)
+grade/cache/
+grade/results/

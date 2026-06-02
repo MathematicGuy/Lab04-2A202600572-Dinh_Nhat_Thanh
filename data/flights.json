@@ -9,7 +9,10 @@
     "arrival_time": "08:55",
     "price_per_person": 1450000,
     "stops": 0,
-    "tags": ["balanced", "weekend"]
+    "tags": [
+      "balanced",
+      "weekend"
+    ]
   },
   {
     "flight_id": "VJ-DAD-0606-02",
@@ -21,7 +24,10 @@
     "arrival_time": "11:35",
     "price_per_person": 990000,
     "stops": 0,
-    "tags": ["budget", "weekend"]
+    "tags": [
+      "budget",
+      "weekend"
+    ]
   },
   {
     "flight_id": "QH-DAD-0606-03",
@@ -33,7 +39,9 @@
     "arrival_time": "20:25",
     "price_per_person": 1200000,
     "stops": 0,
-    "tags": ["night-flight"]
+    "tags": [
+      "night-flight"
+    ]
   },
   {
     "flight_id": "VN-DLI-0606-01",
@@ -45,7 +53,9 @@
     "arrival_time": "07:35",
     "price_per_person": 1350000,
     "stops": 0,
-    "tags": ["balanced"]
+    "tags": [
+      "balanced"
+    ]
   },
   {
     "flight_id": "VJ-DLI-0606-02",
@@ -57,7 +67,9 @@
     "arrival_time": "14:10",
     "price_per_person": 850000,
     "stops": 0,
-    "tags": ["budget"]
+    "tags": [
+      "budget"
+    ]
   },
   {
     "flight_id": "VN-PQC-0606-01",
@@ -69,7 +81,9 @@
     "arrival_time": "09:05",
     "price_per_person": 1700000,
     "stops": 0,
-    "tags": ["island"]
+    "tags": [
+      "island"
+    ]
   },
   {
     "flight_id": "VJ-PQC-0606-02",
@@ -81,7 +95,10 @@
     "arrival_time": "16:15",
     "price_per_person": 1350000,
     "stops": 0,
-    "tags": ["budget", "island"]
+    "tags": [
+      "budget",
+      "island"
+    ]
   },
   {
     "flight_id": "VN-HAN-0607-01",
@@ -93,7 +110,9 @@
     "arrival_time": "11:40",
     "price_per_person": 2100000,
     "stops": 0,
-    "tags": ["business"]
+    "tags": [
+      "business"
+    ]
   },
   {
     "flight_id": "VJ-NHA-0606-01",
@@ -105,7 +124,10 @@
     "arrival_time": "12:20",
     "price_per_person": 780000,
     "stops": 0,
-    "tags": ["budget", "beach"]
+    "tags": [
+      "budget",
+      "beach"
+    ]
   },
   {
     "flight_id": "VN-NHA-0606-02",
@@ -117,7 +139,9 @@
     "arrival_time": "17:00",
     "price_per_person": 1050000,
     "stops": 0,
-    "tags": ["balanced", "beach"]
+    "tags": [
+      "balanced",
+      "beach"
+    ]
   }
 ]
-

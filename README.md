@@ -51,14 +51,54 @@ uv sync --extra dev
 
 ## Run the Grader
 
+You can test and grade the TravelBuddy agent using three different model backends:
+
+### 1. Default: OpenRouter Llama 3.2 3B Instruct (Recommended)
+Tests using `meta-llama/llama-3.2-3b-instruct` via OpenRouter (requires `OPENROUTER_API_KEY`).
+No flags needed — this is the default:
 ```bash
-uv run python grade/scoring.py --module agent.graph --provider google
+uv run python grade/scoring.py
+```
+
+### 2. OpenRouter — any model
+Explicitly route through OpenRouter with a specific model:
+```bash
+uv run python grade/scoring.py --provider openrouter --model-name meta-llama/llama-3.2-3b-instruct
+uv run python grade/scoring.py --provider openrouter --model-name deepseek/deepseek-v4-flash
+```
+
+### 3. Native OpenAI Model
+Tests using a model served directly by OpenAI (requires `OPENAI_API_KEY`):
+```bash
+uv run python grade/scoring.py --provider openai --model-name gpt-5.4-mini
+```
+
+### 4. Local Ollama Model
+Tests using a locally running Ollama model:
+```bash
+uv run python grade/scoring.py --provider ollama --model-name phi3
 ```
 
 ## Optional LLM Judge
 
-The grader also supports an additional LLM-based quality pass for the final answer:
+Add `--judge-provider` and `--judge-model-name` to enable LLM-based quality grading.
+The judge provider is **independent** of the tested model provider:
 
 ```bash
-uv run python grade/scoring.py --module agent.graph --provider google --judge-provider google
+# OpenRouter model tested, OpenAI judge (default)
+uv run python grade/scoring.py
+
+# Explicit flags version of the same command
+uv run python grade/scoring.py --provider openrouter --model-name openai/gpt-oss-20b --judge-provider openai --judge-model-name gpt-5.4-mini
+
+# Force fresh run (skip cache)
+uv run python grade/scoring.py --no-cache
 ```
+
+> **Provider quick reference:**
+> | Provider flag | Routes to | Key required |
+> |---|---|---|
+> | `openrouter` | openrouter.ai API | `OPENROUTER_API_KEY` |
+> | `openai` | api.openai.com | `OPENAI_API_KEY` |
+> | `ollama` | localhost:11434 | none |
+> | `google` | auto-detect (legacy) | either |
